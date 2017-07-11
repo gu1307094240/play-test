@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>填写页</title>
+<link rel="stylesheet"
+	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/staff.css'}" />
+</head>
+<body>
+	#{form @StaffApplication.postInfo()}
+	<table
+		class="table table-hover table-bordered table-striped table-size">
+		<h3 style="text-align: center;">员工应聘登记表</h3>
+
+		<tbody>
+			<tr>
+				<td>申请职位</td>
+				<td class="content" colspan="2"><input type="text"
+					class="input_content" name="applyPosition" id="applyPosition" /></td>
+				<td>申请日期</td>
+				<td colspan="2"><input type="date" class="input_content"
+					name="applyDate" id="applyDate" /></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;" colspan="6">个人基本情况</td>
+			</tr>
+			<tr>
+				<td>姓名</td>
+				<td class="content"><input type="text" class="input_content"
+					name="name" id="name" /></td>
+				<td>性别</td>
+				<td><input type="text" class="input_content" name="sex"
+					id="sex" /></td>
+				<td>出生日期</td>
+				<td><input type="date" class="input_content" name="birthday"
+					id="birthday" /></td>
+			</tr>
+			<tr>
+				<td>籍贯</td>
+				<td class="content"><input type="text" class="input_content"
+					name="nativePlace" id="nativePlace" /></td>
+				<td>民族</td>
+				<td><input type="text" class="input_content"
+					name="nationalities" id="nationalities" /></td>
+				<td>身高/体重</td>
+				<td><input type="text" class="input_content"
+					name="heightWeight" id="heightWeight" /></td>
+			</tr>
+			<tr>
+				<td>政治面貌</td>
+				<td class="content"><input type="text" class="input_content"
+					name="politicalStatus" id="politicalStatus" /></td>
+				<td>健康状况</td>
+				<td><input type="text" class="input_content" name="health"
+					id="health" /></td>
+				<td>婚姻状况</td>
+				<td><input type="text" class="input_content" name="marriage"
+					id="marriage" /></td>
+			</tr>
+			<tr>
+				<td>血型</td>
+				<td class="content"><input type="text" class="input_content"
+					name="bloodType" id="bloodType" /></td>
+				<td>预计到岗时间</td>
+				<td><input type="date" class="input_content" name="dutyTime"
+					id="dutyTime" /></td>
+				<td>特长</td>
+				<td><input type="text" class="input_content" name="specialty"
+					id="specialty" /></td>
+			</tr>
+			<tr>
+				<td>户口所在地</td>
+				<td class="content" colspan="3"><input type="text"
+					class="input_content" name="account" id="account" /></td>
+				<td>职业资格证</td>
+				<td><input type="text" class="input_content" name="pqc"
+					id="pqc" /></td>
+			</tr>
+			<tr>
+				<td>专业职称</td>
+				<td class="content"><input type="text" class="input_content"
+					name="professionalTitle" id="professionalTitle" /></td>
+				<td>评定时间</td>
+				<td><input type="date" class="input_content" name="assessTime"
+					id="assessTime" /></td>
+				<td>身份证号码</td>
+				<td><input type="text" class="input_content" name="cardId"
+					id="cardId" /></td>
+			</tr>
+			<tr>
+				<td>最高学历</td>
+				<td class="content"><input type="text" class="input_content"
+					name="education" id="education" /></td>
+				<td>专业</td>
+				<td><input type="text" class="input_content" name="profession"
+					id="profession" /></td>
+				<td>毕业时间</td>
+				<td><input type="date" class="input_content"
+					name="graduateTime" id="graduateTime" /></td>
+			</tr>
+			<tr>
+				<td>毕业学校</td>
+				<td class="content" colspan="3"><input type="text"
+					class="input_content" name="graduatedScool" id="graduatedScool" /></td>
+				<td>邮箱</td>
+				<td><input type="text" class="input_content" name="email"
+					id="email" /></td>
+			</tr>
+			<tr>
+				<td>参加工作年月</td>
+				<td class="content"><input type="date" class="input_content"
+					name="injoyJobTime" id="injoyJobTime" /></td>
+				<td>联系方式</td>
+				<td><input type="text" class="input_content" name="phone"
+					id="phone" /></td>
+				<td>家庭住址</td>
+				<td><input type="text" class="input_content" name="address"
+					id="address" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		<input type="submit" value="填写完成  提交" />
+	</p>
+	#{/form}
+	#{form @StaffApplication.postLearnExperience() }
+	<table class="table table-hover table-bordered table-striped ">
+
+		<thead>
+			<tr>
+				<td style="text-align: center;" colspan="6">学习和培训经历（从中专起填写）</td>
+			</tr>
+			<tr>
+				<th>起止时间</th>
+				<th>学校名称</th>
+				<th>专业</th>
+				<th>主要业绩（证书或其他成绩）</th>
+				<th>证明人</th>
+			</tr>
+		</thead>
+		<tbody id="learn-experience">
+			<tr>
+				<td><input type="text" class="input_content" name="learnTime" /></td>
+				<td><input type="text" class="input_content" name="schoolName" /></td>
+				<td><input type="text" class="input_content" name="professionName" /></td>
+				<td><input type="text" class="input_content" name="performance" /></td>
+				<td><input type="text" class="input_content" name="witness" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="toolbar" class="btn-group">
+		<div id="addLearn" class="btn btn-default" title="添加">
+			<i class="glyphicon glyphicon-plus"></i> 添加
+		</div>
+		<div id="delLearn" class="btn btn-default" title="删除">
+			<i class="glyphicon glyphicon-minus"></i> 删除
+		</div>
+	</div>
+	<p>
+		<input type="submit" value="填写完成  提交" />
+	</p>
+	#{/form}
+	
+	#{form @StaffApplication.postJobExperience() }
+	<table class="table table-hover table-bordered table-striped ">
+
+		<thead>
+			<tr>
+				<td style="text-align: center;" colspan="6">主要工作经历</td>
+			</tr>
+			<tr>
+				<th>起止时间</th>
+				<th>单位名称</th>
+				<th>职位或工作范围</th>
+				<th>主要工作职责</th>
+				<th>离职原因</th>
+				<th>证明人及联络方式</th>
+			</tr>
+		</thead>
+		<tbody id="job-experience">
+			<tr>
+				<td><input type="text" class="input_content" name="workTime" /></td>
+				<td><input type="text" class="input_content" name="companyName" /></td>
+				<td><input type="text" class="input_content" name="duties" /></td>
+				<td><input type="text" class="input_content" name="jobDutie" /></td>
+				<td><input type="text" class="input_content" name="leaveReason" /></td>
+				<td><input type="text" class="input_content" name="witnessPhone" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="toolbar" class="btn-group">
+		<div id="addJob" class="btn btn-default" title="添加">
+			<i class="glyphicon glyphicon-plus"></i> 添加
+		</div>
+		<div id="delJob" class="btn btn-default" title="删除">
+			<i class="glyphicon glyphicon-minus"></i> 删除
+		</div>
+	</div>
+	<p>
+		<input type="submit" value="填写完成  提交" />
+	</p>
+	#{/form}
+	
+	#{form @StaffApplication.postFamilyExperience() }
+	<table class="table table-hover table-bordered table-striped ">
+
+		<thead>
+			<tr>
+				<td style="text-align: center;" colspan="7">家庭主要成员情况</td>
+			</tr>
+			<tr>
+				<th>称谓</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>工作单位</th>
+				<th>职务</th>
+				<th>是否紧急联络人</th>
+				<th>联络电话</th>
+			</tr>
+		</thead>
+		<tbody id="family-experience">
+			<tr>
+				<td><input type="text" class="input_content" name="appellation" /></td>
+				<td><input type="text" class="input_content" name="name" /></td>
+				<td><input type="text" class="input_content" name="age" /></td>
+				<td><input type="text" class="input_content" name="employer" /></td>
+				<td><input type="text" class="input_content" name="duties" /></td>
+				<td><input type="radio" name="isEmergencyContact" value="1" /> 是 <input type="radio" name="isEmergencyContact" value="0" checked="checked"/> 否 </td>
+				<td><input type="text" class="input_content" name="phone" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="toolbar" class="btn-group">
+		<div id="addMember" class="btn btn-default" title="添加">
+			<i class="glyphicon glyphicon-plus"></i> 添加
+		</div>
+		<div id="delMember" class="btn btn-default" title="删除">
+			<i class="glyphicon glyphicon-minus"></i> 删除
+		</div>
+	</div>
+	<p>
+		<input type="submit" value="填写完成  提交" />
+	</p>
+	#{/form}
+	
+	#{ifErrors}
+	<p class="error">All fields are required!</p>
+	#{/ifErrors} #{if flash.success}
+	<p class="success">${flash.success}</p>
+	#{/if}
+	<!-- 	<p class="buttons">
+		<input type="hidden" name="user.id" value="" /> <input type="button"
+			name="_save" onclick="yanzheng()" value="保存" /> <input type="button"
+			name="_close" value="关闭" />
+	</p> -->
+
+</body>
+<script type="text/javascript">
+$('#addLearn').click(function () {
+	var str = "<tr><td><input type='text' class='input_content' name='learnTime' /></td><td><input type='text' class='input_content' name='schoolName' /></td><td><input type='text' class='input_content' name='professionName' /></td><td><input type='text' class='input_content' name='performance' /></td><td><input type='text' class='input_content' name='witness' /></td></tr>";
+	$('#learn-experience').append(str);
+});
+$('#delLearn').click(function () {
+	//$tbody.removeChild($tbody.childNodes[0]);
+	var list=document.getElementById("learn-experience");
+	var length = list.children.length - 1;
+	list.removeChild(list.childNodes[length]);
+});
+$('#addJob').click(function () {
+	var str = "<tr><td><input type='text' class='input_content' name='workTime' /></td><td><input type='text' class='input_content' name='companyName' /></td><td><input type='text' class='input_content' name='duties' /></td><td><input type='text' class='input_content' name='jobDutie' /></td><td><input type='text' class='input_content' name='leaveReason' /></td><td><input type='text' class='input_content' name='witnessPhone' /></td></tr>";
+	$('#job-experience').append(str);
+});
+$('#delJob').click(function () {
+	//$tbody.removeChild($tbody.childNodes[0]);
+	var list=document.getElementById("job-experience");
+	var length = list.children.length - 1;
+	list.removeChild(list.childNodes[length]);
+});
+$('#addMember').click(function () {
+	var str = "<tr><td><input type='text' class='input_content' name='appellation' /></td><td><input type='text' class='input_content' name='name' /></td><td><input type='text' class='input_content' name='age' /></td><td><input type='text' class='input_content' name='employer' /></td><td><input type='text' class='input_content' name='duties' /></td><td><input type='text' class='input_content' name='isEmergencyContact' /></td><td><input type='text' class='input_content' name='phone' /></td></tr>";
+	$('#family-experience').append(str);
+});
+$('#delMember').click(function () {
+	//$tbody.removeChild($tbody.childNodes[0]);
+	var list=document.getElementById("family-experience");
+	var length = list.children.length - 1;
+	list.removeChild(list.childNodes[length]);
+});
+</script>
+</html>

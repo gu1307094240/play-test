@@ -1,0 +1,5 @@
+07 七月 2017 10:44:03,387 INFO  ~ Starting D:\workspace\play_ws\Staff_Management
+07 七月 2017 10:44:04,541 WARN  ~ You're running Play! in DEV mode
+07 七月 2017 10:44:04,681 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+07 七月 2017 10:44:36,056 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0 for default
+07 七月 2017 10:44:37,314 INFO  ~ Application 'Staff_Management' is now started !
